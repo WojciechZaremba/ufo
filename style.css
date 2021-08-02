@@ -1,0 +1,238 @@
+html {
+	height:100%;
+	width:100%;
+}
+
+body {
+    margin: 0;
+    height:100%;
+	width:100%;
+    background-color: whitesmoke;
+}
+
+#game {
+    position: relative;
+    top: 10px;
+    margin: auto;
+    border: solid black;
+    width: 80%;
+    min-width: 720px;
+    max-width: 1000px;
+    height: 66%;
+    min-height: 400px;
+    max-height: 500px;
+}
+
+#score {
+    font-family: "Courier New";
+    font-weight: bold;
+    border-radius: 25px;
+    position: absolute;
+    font-size: 30px; 
+    width: auto;
+    margin: 15px;
+    padding-left: 10px;
+    padding-right: 15px;
+    height: 50px;
+    border: solid black;
+    left: 0px;
+    z-index: 2
+}
+
+#overpopulation {
+    position: absolute;
+    width: 450px;
+    height: 20px;
+    border: solid black 1px;
+    margin: 30px;
+    right: 30px;
+}
+
+#populationBar {
+    position: absolute;
+    background-color: tomato;
+    width: 30px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+
+
+#keysBools {
+    font-family: "Courier New";
+    font-weight: bold;
+    color: #999;
+    position: fixed;
+    bottom: 15px;
+}
+
+#showKeys {
+    display: flex;
+    flex-flow: row wrap;
+    position: absolute;
+    bottom: -50px;
+}
+
+#infoPanel {
+    position: absolute;
+    background-color: whitesmoke;
+    font-family: "Comic Sans MS";
+    color: #555;
+    height: 100px;
+    width: 100px;
+    padding-left: 10px;
+    top: 15px;
+    opacity: 0.2;
+}
+
+#ship {
+    position: absolute;
+    font-size: 30px;
+    top: 100px;
+    left: 100px;
+    text-shadow: 3px 5px 5px rgba(80, 80, 80, 1);
+    background-color: transparent;
+    z-index: 999;
+}
+
+#ship.beam {
+    text-shadow: 0px 0px 10px rgba(0, 255, 0, 1);
+    width: 42px;
+}
+
+#ship.beam::before, #ship.beam::after {
+    content: "";
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    border-bottom: 125px solid rgba(76, 255, 74, 1);
+    position: absolute;
+    top: 30px;
+    animation-name: beamAnimation;
+    animation-duration: 0.15s;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+#ship.beam::before {
+    border-left: 19px solid transparent;
+    right: 11px;
+    padding-right: 3px;
+    margin-right: 10px;
+}
+
+#ship.beam::after {
+    border-right: 19px solid transparent;
+    left: 10px;
+    padding-left: 2px;
+    margin-left: 11px;
+}
+
+@keyframes beamAnimation {
+    50% {border-bottom: 125px solid rgba(76, 255, 74, 0.5);};
+    100% {border-bottom: 125px solid rgba(76, 255, 74, 0.5);}
+}
+
+#cowContainer, #shipContainer {
+    position: absolute;
+}
+
+.cow, .cow1, .cow2, .cow3, .cow4 {
+    position: absolute;
+    font-size: 30px;
+    transition-duration: 2s;
+    transition-property: top, font-size, transform, opacity, text-shadow;
+    transition-timing-function: ease-out;
+    /* border: solid black; */
+}
+
+/* .standing {
+    transition-property: box-shadow;
+    transition-duration: 2s;
+
+} */
+
+.shadow {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 0px;
+    box-shadow: 10px 0px 4px 1px rgba(0,0,0,1);
+    transition-property: box-shadow, width;
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
+    left: -1px;
+    top: 0px;
+    z-index: -2;
+} 
+
+.blurredShadow {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 0px;
+    box-shadow: 20px 0px 8px 1px rgba(0,0,0,0.1);
+    transition-property: box-shadow, width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    left: -1px;
+    top: 0px;
+    z-index: -2;
+}
+
+.cow1 {
+    left: 390px;
+    top: 200px;
+}
+
+.cow2 {
+    left: 120px;
+    top: 210px;
+}
+
+.cow3 {
+    left: 180px;
+    top: 290px;  
+}
+
+.cow4 {
+    left: 250px;
+    top: 205px;
+}
+
+#cow5 {
+    left: 450px;
+    top: 200px;
+}
+
+.levitate {
+    text-shadow:
+        0px 0px 8px rgba(255, 255, 255, 1),
+        0px 0px 8px rgba(255, 255, 255, 1),
+        0px 0px 15px rgba(0, 255, 0, 1),
+        0px 0px 15px rgba(0, 255, 0, 1),
+        0px 0px 15px rgba(0, 255, 0, 1),
+        0px 0px 15px rgba(0, 255, 0, 1),
+        0px 0px 15px rgba(0, 255, 0, 1),
+        0px 0px 15px rgba(0, 255, 0, 1);
+    transform: rotate(-45deg);
+    font-size: 15px;
+    z-index: 0;
+    opacity: 0.05;
+}
+
+.arrow {
+    height: 25px;
+    width: 50px;
+    text-align: center;
+}
+
+.space {
+    width: 100px;
+    font-family: "Courier New";
+    font-weight: bold;
+}
+
