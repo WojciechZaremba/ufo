@@ -1,4 +1,4 @@
-import { test, cowSpawner, cowPosMap, handleBar } from "./jsModules/cowSpawner.js"
+import { test, cowSpawner, cowPosMap, handleBar } from "./jsmodules/cowSpawner.js"
 window.test = test
 window.cowSpawner = cowSpawner
 window.cowPosMap = cowPosMap
