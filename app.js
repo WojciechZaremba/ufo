@@ -1,8 +1,3 @@
-//import { test, cowSpawner, cowPosMap, handleBar } from "./jsmodules/cowSpawner.js"
-window.test = test
-window.cowSpawner = cowSpawner
-window.cowPosMap = cowPosMap
-
 
 const body = document.querySelector("body")
 const game = document.querySelector("#game")
@@ -439,12 +434,3 @@ shipMovement = setInterval(updateShipPosition, 10)
 
 document.addEventListener("keydown", handleKeyDown)
 document.addEventListener("keyup", handleKeyUp)
-
-window.cows = cows
-window.shadows = shadows
-window.isBeamOn = isBeamOn
-window.beamInterval = beamInterval
-window.keysDown = keysDown
-window.beamToggler = beamToggler
-
-// export { body, cowContainer, stolenCows, stolenLamas, stolenCamels, stolenElephants}
