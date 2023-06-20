@@ -1,3 +1,4 @@
 # ufo
-steal cows
-old, fun game, published at: https://jolly-hypatia-79fb0c.netlify.app/
+### steal cows
+fun old game <br>
+published at: https://jolly-hypatia-79fb0c.netlify.app/
